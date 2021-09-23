@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  tests:
+    container_name: listests
+    image: mcr.microsoft.com/dotnet/sdk:5.0
+    volumes:
+      - .:/LIS
+      - ../LisTests:/tests
+    working_dir: /LIS
+    command:
+      [
+        "dotnet",
+        "test",
+        "../tests/LisTests.csproj"
+      ]
